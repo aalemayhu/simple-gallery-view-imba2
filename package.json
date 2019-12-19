@@ -10,7 +10,7 @@
     "watch": "imbac -w --standalone index.imba",
     "check-version": "imbac --version",
     "production": "imbac -o dist --standalone index.imba",
-    "publish":  "yarn production && npm version && npm publish"
+    "publish":  "yarn production && npm version patch && npm publish"
   },
   "main": "dist/index.js",
   "keywords": [
