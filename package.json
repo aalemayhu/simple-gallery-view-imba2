@@ -1,6 +1,6 @@
 {
   "name": "simple-gallery-view-imba2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a very simple gallery view to experiment with imba 2",
   "repository": "git@github.com:scanf/simple-gallery-view-imba.git",
   "author": "Alexander Alemayhu <alexander@alemayhu.com>",
@@ -10,7 +10,7 @@
     "watch": "imbac -w --standalone index.imba",
     "check-version": "imbac --version",
     "production": "imbac -o dist --standalone index.imba",
-    "publish":  "yarn production && npm version patch && npm publish"
+    "publish": "npm run production && npm version patch && npm publish"
   },
   "main": "dist/index.js",
   "keywords": [
