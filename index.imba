@@ -1,17 +1,5 @@
-### css
-body {
-	margin: 0;
-	padding: 0;
-}
-###
-
-const example = require('./payload.json')
-
-console.log example
-
 tag simple-gallery-view
 
-	# TODO: by default load images from picsum or allow demo mode?
 	prop images
 	prop index default: 0
 	prop height default: "1024px"
@@ -85,15 +73,11 @@ tag simple-gallery-view
 	###
 
 	def currentImage 
-		const image = self.images[self.index]
-		const id = image.id
-		const width = self.width || "1024"
-		const height = self.height || "768"
-		return "https://picsum.photos/id/{id}/{width}/{height}"
+		return self.images[self.index].url
 
 	def caption
-		const image = self.images[self.index]
-		image.author
+		return self.images[self.index].caption
+
 	def increment
 		return unless self.index < self.images.length
 		self.index = self.index + 1
@@ -104,8 +88,6 @@ tag simple-gallery-view
 
 	def render
 		<self>
-			<header>
-				<h1.title> "Simple Gallery View"
 			<main>
 				<button.previous-image :click.decrement> "<"
 				<figure.current-image>
@@ -113,5 +95,3 @@ tag simple-gallery-view
 					<figcaption> self.caption()
 				<button.next-image :click.increment> ">"
 				<div.index> "{self.index + 1} / {self.images.length}"
-
-imba.mount <simple-gallery-view index=0 images=example>
