@@ -2,7 +2,7 @@
   "scripts": {
     "build": "imbac --standalone index.imba",
     "watch": "imbac -w --standalone index.imba",
-    "check-version": "imbac --version"
+    "check-version": "imbac --version",
     "static": "yarn && yarn build && parcel build index.html"
   },
   "dependencies": {
