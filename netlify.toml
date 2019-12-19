@@ -1,0 +1,5 @@
+[build]
+
+  base = "standalone/"
+  publish = "standalone/dist"
+  command = "yarn static"

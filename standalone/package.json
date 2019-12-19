@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "imbac --standalone index.imba",
+    "watch": "imbac -w --standalone index.imba",
+    "check-version": "imbac --version"
+    "static": "yarn && yarn build && parcel build index.html"
+  },
+  "dependencies": {
+    "imba": "^2.0.0-alpha.10"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
